@@ -33,7 +33,7 @@ const Clock = () => {
 
   if (time) {
     return (
-      <h1 className="text-main select-none text-[80px] font-semibold">
+      <h1 className="select-none text-6xl font-semibold text-black/90 dark:text-white/90">
         {time?.hours}
         <span className={`transition-opacity ${active ? "" : "opacity-25"}`}>:</span>
         {time?.minutes}

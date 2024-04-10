@@ -1,4 +1,5 @@
-import { createContext } from "react"
+import { createContext, useEffect } from "react"
+import useChromeStorage from "../hooks/useChromeStorage"
 
 const AccentColorContext = createContext()
 const AccentColor_default = "#ff0000"
@@ -12,12 +13,14 @@ const DarkModeContext = createContext()
 const DarkMode_default = true
 const DarkMode = ({ children }) => {
   const [darkMode, setDarkMode] = useChromeStorage("darkMode", DarkMode_default)
+  if (darkMode) document.documentElement.classList.add("dark")
+  else document.documentElement.classList.remove("dark")
   return <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>{children}</DarkModeContext.Provider>
 }
 export { DarkModeContext }
 
 const LayoutTypeContext = createContext()
-const LayoutType_default = 1
+const LayoutType_default = 0
 const LayoutType = ({ children }) => {
   const [layoutType, setLayoutType] = useChromeStorage("layoutType", LayoutType_default)
   return <LayoutTypeContext.Provider value={{ layoutType, setLayoutType }}>{children}</LayoutTypeContext.Provider>
