@@ -2,7 +2,7 @@ import { createContext } from "react"
 import useChromeStorage from "../../hooks/useChromeStorage"
 
 const SolidBackgroundColorContext = createContext()
-const SolidBackgroundColor_default = { light: "#E796F3", dark: "#201320" }
+const SolidBackgroundColor_default = ["#5eead4", "#134e4a"]
 const SolidBackgroundColor = ({ children }) => {
   const [solidBackgroundColor, setSolidBackgroundColor] = useChromeStorage(
     "solidBackgroundColor",

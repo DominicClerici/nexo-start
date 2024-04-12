@@ -1,7 +1,6 @@
 import * as Popover from "@radix-ui/react-popover"
 import { useContext } from "react"
 import { DarkModeContext } from "../context/GeneralAppearance"
-
 const ColorSelector = ({ value, setValue, options }) => {
   const { darkMode } = useContext(DarkModeContext)
   if (typeof options[0] === "object") {
@@ -19,7 +18,7 @@ const ColorSelector = ({ value, setValue, options }) => {
               <div
                 onClick={() => setValue(option)}
                 key={"col_sel_" + i}
-                className={`flex h-6 w-6 ${isSelected && "ring"} ring-white`}
+                className={`flex h-6 w-6 cursor-pointer rounded ${isSelected && "ring-[2px]"} ring-white`}
               >
                 <div style={{ backgroundColor: option[0] }} className="h-6 w-3 rounded-l"></div>
                 <div style={{ backgroundColor: option[1] }} className="h-6 w-3 rounded-r"></div>
