@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Nexo Start - New Tab",
+  "description": "A customizable and open source new tab page for Chrome.",
+  "version": "0.1",
+  "chrome_url_overrides": {
+    "newtab": "./dist/index.html",
+    "homepage": "./dist/index.html"
+  },
+  "icons": {
+    "128": "favicon-chrome.png"
+  },
+
+  "permissions": ["storage", "history"]
+}

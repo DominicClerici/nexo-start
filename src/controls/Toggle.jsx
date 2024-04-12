@@ -1,12 +1,17 @@
 import * as Switch from "@radix-ui/react-switch"
+import { useContext } from "react"
 
-const Toggle = ({ htmlFor }) => {
+const Toggle = ({ htmlFor, ctx }) => {
+  const ctxt = useContext(ctx)
+  const vals = Object.values(ctxt)
   return (
     <Switch.Root
       id={htmlFor}
-      className="relative h-7 w-12 rounded-full border border-white/25 px-0.5 ring-white/50 transition-colors duration-100 focus:ring-2 data-[state='checked']:bg-blue-500 data-[state='unchecked']:bg-black"
+      checked={vals[0]}
+      onCheckedChange={(e) => vals[1](e)}
+      className="relative h-7 w-12 rounded-full border border-white/25 px-1 ring-white/50 transition-colors duration-75 focus:ring-2 data-[state='checked']:bg-blue-500 data-[state='unchecked']:bg-black"
     >
-      <Switch.Thumb className="block h-6 w-7 rounded-full bg-white transition-transform duration-100 data-[state='checked']:translate-x-5" />
+      <Switch.Thumb className="block h-5 w-6 rounded-full bg-white transition-transform duration-75 data-[state='checked']:translate-x-3.5" />
     </Switch.Root>
   )
 }

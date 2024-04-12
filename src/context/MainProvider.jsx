@@ -1,14 +1,20 @@
-import ClockProvider from "./Clock"
+import ClockProvider from "./ClockProvider"
 import GeneralAppearanceProvider from "./GeneralAppearance"
-import ShortcutsProvider from "./Shortcuts"
-import WeatherProvider from "./Weather"
+import SearchProvider from "./SearchProvider"
+import ShortcutsProvider from "./ShortcutsProvider"
+import WeatherProvider from "./WeatherProvider"
+import BackgroundProvider from "./backgrounds/BackgroundProvider"
 
 const MainProvider = ({ children }) => {
   return (
     <GeneralAppearanceProvider>
       <WeatherProvider>
         <ClockProvider>
-          <ShortcutsProvider>{children}</ShortcutsProvider>
+          <ShortcutsProvider>
+            <SearchProvider>
+              <BackgroundProvider>{children}</BackgroundProvider>
+            </SearchProvider>
+          </ShortcutsProvider>
         </ClockProvider>
       </WeatherProvider>
     </GeneralAppearanceProvider>

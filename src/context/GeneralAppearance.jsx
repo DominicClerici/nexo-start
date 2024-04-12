@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react"
+import { createContext } from "react"
 import useChromeStorage from "../hooks/useChromeStorage"
 
 const AccentColorContext = createContext()

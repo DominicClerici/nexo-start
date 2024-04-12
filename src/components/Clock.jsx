@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { ShowSecondsContext, Use24HourContext } from "../context/Clock.jsx"
+import { ShowSecondsContext, Use24HourContext } from "../context/ClockProvider.jsx"
 
 const Clock = () => {
   const { use24Hour } = useContext(Use24HourContext)

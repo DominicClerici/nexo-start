@@ -14,7 +14,7 @@ const WeatherEnabled = ({ children }) => {
 export { WeatherEnabledContext }
 
 const WeatherCelsiusContext = createContext()
-const WeatherCelsius_default = true
+const WeatherCelsius_default = false
 const WeatherCelsius = ({ children }) => {
   const [weatherCelsius, setWeatherCelsius] = useChromeStorage("weatherCelsius", WeatherCelsius_default)
   return (
@@ -26,7 +26,7 @@ const WeatherCelsius = ({ children }) => {
 export { WeatherCelsiusContext }
 
 const WeatherLocationContext = createContext()
-const WeatherLocation_default = { lat: 0, lon: 0 }
+const WeatherLocation_default = { lat: 39.168804, lon: -86.536659 }
 const WeatherLocation = ({ children }) => {
   const [weatherLocation, setWeatherLocation] = useChromeStorage("weatherLocation", WeatherLocation_default)
   return (

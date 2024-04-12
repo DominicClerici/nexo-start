@@ -86,41 +86,41 @@ const FullWeather = ({ weatherCelsius, weatherLocation }) => {
   let innerJSX
   if (data) {
     innerJSX = (
-      <div className="my-6 flex items-start gap-4">
+      <div className="my-6 flex items-start">
         {data.map((day, i) => {
           return (
-            <>
-              <div key={"fc_" + i} className="fadeInAnim flex w-20 flex-col items-center gap-4">
-                <h2>{day.date}</h2>
-                <img className="h-8 w-8" src={`./Icons/Weather/${formatGeneralizedCode(day.code)}.png`} />
+            <div key={"fc_" + i} className="ml-2.5 flex gap-2">
+              <div className="flex w-20 flex-col items-center gap-4">
+                <h2 className="text-black/90 dark:text-white/90">{day.date}</h2>
+                <img className="h-8 w-8" src={`./images/Weather/${formatGeneralizedCode(day.code)}.png`} />
                 <div className="flex items-center gap-2">
-                  <h2 className="text-lg text-white/90">{day.max}&deg;</h2>
-                  <h2 className="text-lg text-white/60">{day.min}&deg;</h2>
+                  <h2 className="text-lg text-black/90 dark:text-white/90">{day.max}&deg;</h2>
+                  <h2 className="text-lg text-black/60 dark:text-white/60">{day.min}&deg;</h2>
                 </div>
               </div>
-              {i !== data.length - 1 && <div className="my-auto h-12 w-0.5 bg-white/10" />}
-            </>
+              {i !== data.length - 1 && <div className="my-auto h-12 w-0.5 bg-black/10 dark:bg-white/10" />}
+            </div>
           )
         })}
       </div>
     )
   } else {
     innerJSX = (
-      <div className="delayedFadeInAnim my-6 flex items-start gap-4">
+      <div className="my-6 flex items-start">
         {Array(7)
           .fill(0)
           .map((_, i) => {
             return (
-              <>
-                <div key={"fc_" + i} className="flex w-20 flex-col items-center gap-4">
-                  <div className="h-7 w-12 bg-white/10"></div>
-                  <div className="h-8 w-8 rounded-lg bg-white/10" />
+              <div key={"fc_" + i} className="ml-2.5 flex gap-2">
+                <div className="flex w-20 flex-col items-center gap-4">
+                  <div className="h-7 w-12 bg-black/10 dark:bg-white/10"></div>
+                  <div className="h-8 w-8 rounded-lg bg-black/10 dark:bg-white/10" />
                   <div className="flex items-center gap-2">
-                    <div className="h-6 w-8 bg-white/10"></div>
+                    <div className="h-6 w-8 bg-black/10 dark:bg-white/10"></div>
                   </div>
                 </div>
-                {i !== 6 && <div className="h-8 w-0.5 bg-white/10" />}
-              </>
+                {i !== 6 && <div className="h-8 w-0.5 bg-black/10 dark:bg-white/10" />}
+              </div>
             )
           })}
       </div>
@@ -129,7 +129,7 @@ const FullWeather = ({ weatherCelsius, weatherLocation }) => {
 
   return (
     <div>
-      <h2 className="flex items-center gap-2 text-3xl font-semibold">
+      <h2 className="flex items-center gap-2 text-3xl font-semibold text-black/90 dark:text-white/90">
         <WeatherSVG />
         Forecast
       </h2>
@@ -137,7 +137,7 @@ const FullWeather = ({ weatherCelsius, weatherLocation }) => {
       <a
         href={`https://forecast.weather.gov/MapClick.php?lon=${weatherLocation.lon}&lat=${weatherLocation.lat}`}
         target="_blank"
-        className="text-white/60 underline-offset-2 transition-colors duration-75 hover:text-white hover:underline"
+        className="text-black/60 underline-offset-2 transition-colors duration-75 hover:text-black hover:underline dark:text-white/60 dark:hover:text-white"
       >
         See full forecast
       </a>
