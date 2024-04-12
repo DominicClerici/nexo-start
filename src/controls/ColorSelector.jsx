@@ -6,8 +6,8 @@ const ColorSelector = ({ value, setValue, options }) => {
   if (typeof options[0] === "object") {
     return (
       <Popover.Root>
-        <Popover.Trigger className="flex items-center gap-2 rounded-lg bg-black p-2 text-lg font-medium text-white">
-          <div style={{ backgroundColor: darkMode ? value[1] : value[0] }} className="h-4 w-4 rounded"></div>
+        <Popover.Trigger className="button-colors flex items-center gap-2 px-4 py-2">
+          <div style={{ backgroundColor: darkMode ? value[1] : value[0] }} className="h-5 w-5 rounded"></div>
           Change
         </Popover.Trigger>
         <Popover.Content className="mr-6 grid grid-cols-6 gap-2 rounded-lg border border-black/30 bg-neutral-200 p-2 dark:border-white/30 dark:bg-neutral-950">
@@ -18,10 +18,10 @@ const ColorSelector = ({ value, setValue, options }) => {
               <div
                 onClick={() => setValue(option)}
                 key={"col_sel_" + i}
-                className={`flex h-6 w-6 cursor-pointer rounded ${isSelected && "ring-[2px]"} ring-white`}
+                className={`flex h-8 w-8 cursor-pointer rounded ${isSelected && "ring-[2px]"} ring-white`}
               >
-                <div style={{ backgroundColor: option[0] }} className="h-6 w-3 rounded-l"></div>
-                <div style={{ backgroundColor: option[1] }} className="h-6 w-3 rounded-r"></div>
+                <div style={{ backgroundColor: option[0] }} className="h-8 w-4 rounded-l"></div>
+                <div style={{ backgroundColor: option[1] }} className="h-8 w-4 rounded-r"></div>
               </div>
             )
           })}

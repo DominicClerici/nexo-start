@@ -8,6 +8,9 @@
   font-display: swap;
   src: url("/fonts/inter.ttf") format("ttf");
 }
+.button-colors {
+  @apply rounded-md border border-white/30 bg-neutral-900 text-lg text-white transition-colors duration-75 hover:border-white/50 hover:bg-neutral-800 active:brightness-75 data-[state='open']:border-white/50 data-[state='open']:bg-neutral-800;
+}
 
 body {
   @apply bg-neutral-100 dark:bg-gray-950;
