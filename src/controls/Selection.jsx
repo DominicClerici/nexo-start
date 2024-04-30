@@ -2,7 +2,7 @@ import * as Select from "@radix-ui/react-select"
 
 const className = {
   listItem:
-    "items-center flex text-lg px-4 rounded data-[highlighted]:bg-white/10 outline-none data-[state='checked']:font-medium dark:data-[state='checked']:text-white data-[state='checked']:text-black dark:text-white/80 text-black/80",
+    "items-center flex text-lg px-4 rounded data-[highlighted]:bg-black/10 dark:data-[highlighted]:bg-white/10 outline-none data-[state='checked']:font-medium dark:data-[state='checked']:text-white data-[state='checked']:text-black dark:text-white/80 text-black/80",
   listLabel: "text-black/70 text-sm dark:text-white/70 pl-1",
 }
 
@@ -37,7 +37,7 @@ const Selection = ({ options, labels, value, setValue }) => {
         </svg>
         <Select.Value />
       </Select.Trigger>
-      <Select.Content className="right-0 top-0 rounded-md border border-white/30 bg-neutral-900 p-2">
+      <Select.Content className="right-0 top-0 rounded-md border border-black/50 bg-neutral-200 p-2 dark:border-white/50 dark:bg-neutral-800">
         <Select.Viewport>
           {/* check if options has groups or is just raw list */}
           {typeof labels[0] === "object" ? (

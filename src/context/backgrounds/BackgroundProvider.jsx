@@ -1,6 +1,7 @@
 import { createContext } from "react"
 import useChromeStorage from "../../hooks/useChromeStorage"
-import { SolidBackgroundColor } from "./SolidColor"
+import { SolidBackgroundColor } from "./colors/SolidColor"
+import { SolidGradientColor } from "./colors/SolidGradient"
 
 const BackgroundTypeContext = createContext()
 const BackgroundType_default = "solid"
@@ -17,7 +18,9 @@ export { BackgroundTypeContext }
 const BackgroundProvider = ({ children }) => {
   return (
     <BackgroundType>
-      <SolidBackgroundColor>{children}</SolidBackgroundColor>
+      <SolidGradientColor>
+        <SolidBackgroundColor>{children}</SolidBackgroundColor>
+      </SolidGradientColor>
     </BackgroundType>
   )
 }

@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import useChromeStorage from "../../hooks/useChromeStorage"
+import useChromeStorage from "../../../hooks/useChromeStorage"
 
 const SolidBackgroundColorContext = createContext()
 const SolidBackgroundColor_default = ["#5eead4", "#134e4a"]

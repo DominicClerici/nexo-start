@@ -10,7 +10,7 @@ const AccentColor = ({ children }) => {
 export { AccentColorContext }
 
 const DarkModeContext = createContext()
-const DarkMode_default = true
+const DarkMode_default = false
 const DarkMode = ({ children }) => {
   const [darkMode, setDarkMode] = useChromeStorage("darkMode", DarkMode_default)
   if (darkMode) document.documentElement.classList.add("dark")

@@ -1,10 +1,8 @@
 import { useContext } from "react"
-import { SolidBackgroundColorContext } from "../../context/backgrounds/SolidColor"
-import { DarkModeContext } from "../../context/GeneralAppearance"
+import { SolidBackgroundColorContext } from "../../context/backgrounds/colors/SolidColor"
 
-const Solid = () => {
+const Solid = ({ darkMode }) => {
   const { solidBackgroundColor } = useContext(SolidBackgroundColorContext)
-  const { darkMode } = useContext(DarkModeContext)
 
   return (
     <div
