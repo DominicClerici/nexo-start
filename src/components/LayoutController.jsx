@@ -9,7 +9,7 @@ const LayoutController = () => {
   const { layoutType } = useContext(LayoutTypeContext)
   if (layoutType === 0) {
     return (
-      <main className="mt-36 flex flex-col items-center gap-4">
+      <main className="short:mt-4 mt-36 flex flex-col items-center gap-4">
         <Clock />
         <Weather />
         <SearchBar />
