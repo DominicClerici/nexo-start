@@ -7,7 +7,6 @@ import useChromeStorage from "../hooks/useChromeStorage"
 //   name: string,
 // only if type is "link": url: string,
 //   icon: string || null,
-//   color: string || null,
 //   order: number,
 // only if type is "folder": children: [Shortcuts]
 // }
@@ -18,8 +17,7 @@ const example_shortcuts = [
     id: "folder1",
     name: "Folder 1",
     icon: null,
-    color: "blue",
-    order: 0,
+    order: 1,
     children: [
       {
         type: "link",
@@ -27,7 +25,6 @@ const example_shortcuts = [
         name: "Link 1",
         url: "https://google.com",
         icon: null,
-        color: "red",
         order: 0,
       },
     ],
@@ -38,8 +35,7 @@ const example_shortcuts = [
     name: "Link 2",
     url: "https://google.com",
     icon: null,
-    color: "green",
-    order: 1,
+    order: 2,
   },
   {
     type: "link",
@@ -47,8 +43,7 @@ const example_shortcuts = [
     name: "Link 3",
     url: "https://facebook.com",
     icon: null,
-    color: "green",
-    order: 2,
+    order: 3,
   },
   {
     type: "link",
@@ -56,8 +51,7 @@ const example_shortcuts = [
     name: "Link 4",
     url: "https://youtube.com",
     icon: null,
-    color: "green",
-    order: 3,
+    order: 4,
   },
   {
     type: "link",
@@ -65,8 +59,7 @@ const example_shortcuts = [
     name: "Link 4",
     url: "https://reddit.com",
     icon: null,
-    color: "green",
-    order: 4,
+    order: 5,
   },
   {
     type: "link",
@@ -74,8 +67,7 @@ const example_shortcuts = [
     name: "Link 4",
     url: "https://stackoverflow.com",
     icon: null,
-    color: "green",
-    order: 5,
+    order: 6,
   },
   {
     type: "link",
@@ -83,8 +75,7 @@ const example_shortcuts = [
     name: "Link 4",
     url: "https://google.com",
     icon: null,
-    color: "green",
-    order: 6,
+    order: 7,
   },
   {
     type: "link",
@@ -92,8 +83,7 @@ const example_shortcuts = [
     name: "Link 4",
     url: "https://dominicclerici.com",
     icon: null,
-    color: "green",
-    order: 7,
+    order: 8,
   },
 ]
 
@@ -102,7 +92,15 @@ const ShortcutsContext = createContext()
 const Shortcuts_default = example_shortcuts
 const Shortcuts = ({ children }) => {
   const [shortcuts, setShortcuts] = useChromeStorage("shortcuts", Shortcuts_default)
-  return <ShortcutsContext.Provider value={{ shortcuts, setShortcuts }}>{children}</ShortcutsContext.Provider>
+  const flatShortcuts = shortcuts.reduce((acc, item) => {
+    if (item.type === "folder") {
+      return acc.concat(item.children)
+    }
+    return acc.concat(item)
+  }, [])
+  return (
+    <ShortcutsContext.Provider value={{ shortcuts, setShortcuts, flatShortcuts }}>{children}</ShortcutsContext.Provider>
+  )
 }
 export { ShortcutsContext }
 
@@ -110,6 +108,7 @@ const ShortcutsEnabledContext = createContext()
 const ShortcutsEnabled_default = true
 const ShortcutsEnabled = ({ children }) => {
   const [shortcutsEnabled, setShortcutsEnabled] = useChromeStorage("shortcutsEnabled", ShortcutsEnabled_default)
+
   return (
     <ShortcutsEnabledContext.Provider value={{ shortcutsEnabled, setShortcutsEnabled }}>
       {children}

@@ -4,7 +4,7 @@ import { SolidBackgroundColor } from "./colors/SolidColor"
 import { SolidGradientColor } from "./colors/SolidGradient"
 
 const BackgroundTypeContext = createContext()
-const BackgroundType_default = "solid"
+const BackgroundType_default = "plasma"
 const BackgroundType = ({ children }) => {
   const [backgroundType, setBackgroundType] = useChromeStorage("backgroundType", BackgroundType_default)
   return (

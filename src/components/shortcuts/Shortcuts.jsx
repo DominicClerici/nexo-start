@@ -32,6 +32,16 @@ const Folder = ({ data }) => {
   return (
     <Popover.Root>
       <Popover.Trigger className="line-clamp-1 flex flex-col items-center justify-center rounded p-4 text-center text-black/90 hover:bg-black/10 dark:text-white/90 dark:hover:bg-white/10">
+        <svg
+          className="h-8 w-8"
+          stroke="currentColor"
+          fill="currentColor"
+          strokeWidth="0"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"></path>
+        </svg>
         {data.name}
       </Popover.Trigger>
       <Popover.Content className="z-20 rounded-lg bg-neutral-900/10 p-2 backdrop-blur-lg dark:bg-neutral-200/10">

@@ -31,29 +31,31 @@ function parseUrl(urlString) {
 const prettyURL = (url) => {
   const urlData = parseUrl(url)
   let prettyUrl
-  if (typeof urlData == "string") {
-    prettyUrl = <span>{data.url}</span>
-  } else {
+  if (typeof urlData == "object") {
     prettyUrl = (
       <>
-        <span className="text-main/90">{urlData.host}</span>
+        <span className="">{urlData.host.split("%")[0]}</span>
         {urlData.firstpath ? (
           <>
-            /<span className="text-main/60">{urlData.firstpath}</span>
+            /<span className="text-black/60 dark:text-white/60">{urlData.firstpath}</span>
           </>
         ) : null}
         {urlData.secondpath ? (
           <>
-            /<span className="text-main/60">{urlData.secondpath}</span>
+            /<span className="text-black/60 dark:text-white/60">{urlData.secondpath}</span>
           </>
         ) : null}
         {urlData.continues ? (
           <>
-            /<span className="text-main/60">...</span>
+            /<span className="text-black/60 dark:text-white/60">...</span>
           </>
         ) : null}
       </>
     )
+  } else if (typeof urlData == "string") {
+    prettyUrl = <span>{urlData.slice(0, 20) + "..."}</span>
+  } else {
+    prettyUrl = <></>
   }
   return prettyUrl
 }

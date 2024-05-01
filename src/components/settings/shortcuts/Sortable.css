@@ -1,0 +1,71 @@
+.customHoverOnPath:hover svg:not(.dontAnim) path:nth-of-type(1) {
+  d: path("M2 17 L12 22 L22 17");
+}
+.customHoverOnPath:hover svg:not(.dontAnim) path:nth-of-type(2) {
+  d: path("M4 12 L20 12");
+}
+.customHoverOnPath:hover svg:not(.dontAnim) path:nth-of-type(3) {
+  d: path("M2 7 L12 2 L22 7");
+}
+.drawOnHover:hover .pathToDraw {
+  transition: stroke-dashoffset 0.2s;
+  stroke-dashoffset: 0;
+}
+.pathToDraw {
+  transition: stroke-dashoffset 0.05s;
+}
+.mainGroupHover:hover .buttonArrowDasharray {
+  stroke-dashoffset: 0;
+}
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(96px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.animFromRight {
+  animation: slideFromRight 150ms ease-out;
+}
+.textAnimLeft {
+  animation: slightSlideFromLeft 150ms ease-out;
+}
+.textAnimRight {
+  animation: slightSlideFromRight 150ms ease-out;
+}
+@keyframes slightSlideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes slightSlideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-96px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.animFromLeft {
+  animation: slideFromLeft 150ms ease-out;
+}

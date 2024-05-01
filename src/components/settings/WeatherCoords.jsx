@@ -67,7 +67,7 @@ const WeatherCoords = () => {
             id="weatherLat"
             value={weatherLocation.lat}
             onChange={(e) => setWeatherLocation({ ...weatherLocation, lat: e.target.value })}
-            className="rounded border border-black/50 bg-neutral-200 px-2 py-1 text-black/90 dark:border-white/50 dark:bg-neutral-800 dark:text-white/90"
+            className="rounded border border-black/30 bg-neutral-100 px-2 py-1 text-black/90 focus:border-black/50 focus:bg-neutral-200 dark:border-white/30 dark:bg-neutral-900 dark:text-white/90 dark:focus:border-white/50 dark:focus:bg-neutral-800"
           />
         </label>
         <label htmlFor="weatherLon" className="flex flex-col items-start">
@@ -76,7 +76,7 @@ const WeatherCoords = () => {
             id="weatherLon"
             value={weatherLocation.lon}
             onChange={(e) => setWeatherLocation({ ...weatherLocation, lon: e.target.value })}
-            className="rounded border border-black/50 bg-neutral-200 px-2 py-1 text-black/90 dark:border-white/50 dark:bg-neutral-800 dark:text-white/90"
+            className="rounded border border-black/30 bg-neutral-100 px-2 py-1 text-black/90 focus:border-black/50 focus:bg-neutral-200 dark:border-white/30 dark:bg-neutral-900 dark:text-white/90 dark:focus:border-white/50 dark:focus:bg-neutral-800"
           />
         </label>
       </div>
