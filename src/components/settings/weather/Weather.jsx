@@ -1,5 +1,5 @@
-import { WeatherCelsiusContext, WeatherEnabledContext } from "../../context/WeatherProvider"
-import Toggle from "../../controls/Toggle"
+import { WeatherCelsiusContext, WeatherEnabledContext } from "../../../context/WeatherProvider"
+import Toggle from "../../../controls/Toggle"
 import WeatherCoords from "./WeatherCoords"
 
 const Weather = () => {

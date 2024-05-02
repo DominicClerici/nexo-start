@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
-import MainButton from "../../controls/MainButton"
-import { WeatherLocationContext } from "../../context/WeatherProvider"
+import MainButton from "../../../controls/MainButton"
+import { WeatherLocationContext } from "../../../context/WeatherProvider"
 
 const WeatherCoords = () => {
   const { weatherLocation, setWeatherLocation } = useContext(WeatherLocationContext)

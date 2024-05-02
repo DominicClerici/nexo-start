@@ -73,7 +73,7 @@ const SortableFolderView = ({ folder, setFolder, setShortcuts }) => {
       <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCenter}>
         <SortableContext items={itemIds} strategy={verticalListSortingStrategy}>
           <div
-            className={`animFromRight flex w-full flex-col py-2 transition duration-150 ease-in ${isTransitioning ? "translate-x-24 opacity-30" : null}`}
+            className={`flex w-full flex-col py-2 transition duration-150 ease-in ${isTransitioning ? "translate-x-24 opacity-30" : null}`}
           >
             {shortcuts.map((shortcut) => {
               return (

@@ -15,6 +15,8 @@ const SortableShortcuts = () => {
   const [isReordering, setIsReordering] = useState(false)
   const [isAnyEditing, setIsAnyEditing] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [blockInitialAnim, setBlockInitialAnim] = useState(true)
+
   const handleDragEnd = (e) => {
     const { active, over } = e
     if (active.id !== over.id) {
@@ -54,10 +56,10 @@ const SortableShortcuts = () => {
     )
   } else {
     return (
-      <div className="mt-6 overflow-hidden border-t-2 border-black/30 pt-6 text-black dark:border-white/30 dark:text-white">
+      <div className="mt-6 border-t-2 border-black/30 pt-6 text-black dark:border-white/30 dark:text-white">
         <span className="mb-4 flex items-center justify-between">
           <h2
-            className={`textAnimRight text-xl font-semibold duration-150 ease-in ${isTransitioning ? "translate-x-6 opacity-0" : ""}`}
+            className={`${!blockInitialAnim && "textAnimRight"} text-xl font-semibold duration-150 ease-in ${isTransitioning ? "translate-x-6 opacity-0" : ""}`}
           >
             All shortcuts
           </h2>
@@ -70,11 +72,12 @@ const SortableShortcuts = () => {
         <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCenter}>
           <SortableContext items={itemIds} strategy={verticalListSortingStrategy}>
             <div
-              className={`animFromLeft flex flex-col transition duration-150 ease-in ${isTransitioning ? "-translate-x-24 opacity-30" : null}`}
+              className={`${!blockInitialAnim && "animFromLeft"} flex flex-col transition duration-150 ease-in ${isTransitioning ? "-translate-x-24 opacity-30" : null}`}
             >
               {shortcuts.map((shortcut) => {
                 return (
                   <SortableShortcut
+                    setBlockInitialAnim={setBlockInitialAnim}
                     setIsAnyEditing={setIsAnyEditing}
                     openFolderView={setFolderView}
                     key={"sort-" + shortcut.id}

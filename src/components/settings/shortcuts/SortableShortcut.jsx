@@ -13,6 +13,7 @@ const SortableShortcut = ({
   setIsAnyEditing,
   openFolderView,
   setIsTransitioning,
+  setBlockInitialAnim,
 }) => {
   const [isEditing, setIsEditing] = useState(false)
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -78,6 +79,7 @@ const SortableShortcut = ({
                     setIsTransitioning(true)
                     setTimeout(() => {
                       openFolderView(data.id)
+                      setBlockInitialAnim(false)
                       setIsTransitioning(false)
                     }, 150)
                   }}

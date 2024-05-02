@@ -21,7 +21,7 @@ const SettingsOpener = () => {
       </Dialog.Trigger>
       <Dialog.Overlay className="fixed inset-0 z-40 bg-black/50" />
       <Dialog.Portal>
-        <Dialog.Content className="fixed right-0 top-0 z-50 h-full bg-neutral-100 p-6 dark:bg-neutral-900">
+        <Dialog.Content className="fixed right-0 top-0 z-50 h-full overflow-hidden bg-neutral-100 p-6 dark:bg-neutral-900">
           <Dialog.Title className="text-3xl font-semibold text-black/90 dark:text-white/90">Settings</Dialog.Title>
           <Container />
         </Dialog.Content>
