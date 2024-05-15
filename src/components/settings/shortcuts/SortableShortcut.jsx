@@ -93,14 +93,14 @@ const SortableShortcut = ({
                   >
                     <path
                       className="-translate-x-0.5 transition-transform duration-100 group-hover:translate-x-0"
-                      strokeWidth={1.5}
+                      strokeWidth={1}
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M5 1 L9 5 L5 9"
                     ></path>
                     <path
                       className="buttonArrowDasharray -translate-x-0.5 transition-all duration-100 group-hover:translate-x-0"
-                      strokeWidth={1.5}
+                      strokeWidth={1}
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeDasharray={8}
