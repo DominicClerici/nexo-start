@@ -61,3 +61,31 @@
   width: 100%;
   animation: tabSlideToRight 150ms linear forwards;
 }
+
+@keyframes dialogSlideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes dialogSlideToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+.dialogContentAnim[data-state="open"] {
+  animation: dialogSlideFromRight 250ms ease-out;
+}
+.dialogContentAnim[data-state="closed"] {
+  animation: dialogSlideToRight 150ms ease-in;
+}

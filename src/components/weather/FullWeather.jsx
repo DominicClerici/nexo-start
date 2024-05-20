@@ -86,7 +86,7 @@ const FullWeather = ({ weatherCelsius, weatherLocation }) => {
   let innerJSX
   if (data) {
     innerJSX = (
-      <div className="my-6 flex items-start">
+      <div className="fadeItemIn my-6 flex items-start">
         {data.map((day, i) => {
           return (
             <div key={"fc_" + i} className="ml-2.5 flex gap-2">

@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react"
 import { WeatherCelsiusContext, WeatherEnabledContext, WeatherLocationContext } from "../../context/WeatherProvider.jsx"
 import interpretWMOCode from "../../utils/interpretWeatherCode"
 import formatGeneralizedCode from "../../utils/formatWeatherCode"
+import "./weatherOpenAnim.css"
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null)
@@ -52,7 +53,7 @@ const Weather = () => {
           </div>
         </Dialog.Trigger>
         <Dialog.Overlay className="fixed inset-0 z-10 bg-black/15 backdrop-blur-sm dark:bg-black/25" />
-        <Dialog.Content className="fixed z-10 rounded-lg bg-neutral-100 p-4 shadow-lg dark:bg-neutral-900">
+        <Dialog.Content className="weatherOpenAnim fixed z-10 rounded-lg bg-neutral-100 p-4 shadow-lg dark:bg-neutral-900">
           <FullWeather weatherCelsius={weatherCelsius} weatherLocation={weatherLocation} />
         </Dialog.Content>
       </Dialog.Root>

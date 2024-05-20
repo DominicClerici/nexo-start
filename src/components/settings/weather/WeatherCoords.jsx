@@ -1,23 +1,29 @@
 import { useContext, useState } from "react"
 import MainButton from "../../../controls/MainButton"
 import { WeatherLocationContext } from "../../../context/WeatherProvider"
+import LoadingSpinner from "../../LoadingSpinner"
 
 const WeatherCoords = () => {
   const { weatherLocation, setWeatherLocation } = useContext(WeatherLocationContext)
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const tryLocation = () => {
+    setIsLoading(true)
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords
+          setIsLoading(false)
           setWeatherLocation({ ...weatherLocation, lat: latitude, lon: longitude })
         },
         () => {
+          setIsLoading(false)
           setError(2)
         },
       )
     } else {
+      setIsLoading(false)
       setError(1)
     }
   }
@@ -29,8 +35,14 @@ const WeatherCoords = () => {
           <h2 className="text-lg text-black/90 dark:text-white/90">Update to current location</h2>
           <h3 className="text-black/50 dark:text-white/50">Requires location permission</h3>
         </span>
-        <MainButton disabled={error !== null} onClick={tryLocation} htmlFor="weatherLocation">
-          Update
+        <MainButton
+          className="relative"
+          disabled={error !== null || isLoading}
+          onClick={tryLocation}
+          htmlFor="weatherLocation"
+        >
+          {isLoading && <LoadingSpinner className="!absolute left-[calc(50%_-_16px)] top-[calc(50%_-_16px)] h-8 w-8" />}
+          <span className={isLoading ? "opacity-0 transition-opacity duration-75" : ""}>Update</span>
         </MainButton>
       </label>
       {error !== null && (

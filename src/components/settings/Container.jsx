@@ -3,11 +3,10 @@ import General from "./General"
 import Appearance from "./appearance/Appearance"
 import Weather from "./weather/Weather"
 import Shortcuts from "./shortcuts/Shortcuts"
-import "./tabAnimations.css"
 import { useEffect, useRef, useState } from "react"
 
 const className = {
-  tab: "flex-1 px-3 py-1 m-1 dark:text-white/70 text-black/70 z-10 text-lg data-[state='active']:pointer-events-none rounded dark:hover:bg-white/5 hover:bg-black/5 cursor-pointer text-center dark:data-[state='active']:text-white data-[state='active']:text-black transition-colors duration-75",
+  tab: "flex-1 px-3 py-1 m-1 dark:text-white/70 text-black/70 z-10 text-lg data-[state='active']:pointer-events-none rounded dark:hover:bg-white/5 hover:bg-black/5 cursor-pointer text-center dark:data-[state='active']:text-white data-[state='active']:text-black",
 }
 
 const Container = () => {

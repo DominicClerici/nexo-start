@@ -37,7 +37,7 @@ const Selection = ({ options, labels, value, setValue }) => {
         </svg>
         <Select.Value />
       </Select.Trigger>
-      <Select.Content className="right-0 top-0 rounded-md border border-black/50 bg-neutral-200 p-2 dark:border-white/50 dark:bg-neutral-800">
+      <Select.Content className="right-0 top-0 z-20 rounded-md border border-black/50 bg-neutral-200 p-2 dark:border-white/50 dark:bg-neutral-800">
         <Select.Viewport>
           {/* check if options has groups or is just raw list */}
           {typeof labels[0] === "object" ? (
