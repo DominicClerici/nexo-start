@@ -57,7 +57,7 @@ const SettingsOpener = () => {
               {showingCreator ? "About me" : "Settings"}
             </Dialog.Title>
             <div
-              className="dark:text/white/40 cursor-pointer rounded p-1 text-black/40 transition-colors duration-75 hover:bg-black/10 hover:text-black dark:text-white/40 dark:hover:text-white"
+              className="dark:text/white/40 cursor-pointer rounded p-1 text-black/40 transition-colors duration-75 hover:bg-black/10 hover:text-black dark:text-white/40 dark:hover:bg-white/10 dark:hover:text-white"
               onClick={() => setShowingCreator(!showingCreator)}
             >
               {showingCreator ? <CloseIcon /> : <InfoIcon />}
